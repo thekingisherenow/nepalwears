@@ -8,7 +8,11 @@ export default function Home() {
     <div className="z-10">
       <Head>
         <title>Nepalwears</title>
-        {/* <link rel="shortcut icon" href="/favicon.png" /> */}
+        <meta
+  name="Nepalwears"
+  content="Bank pani.Sathi pani. "
+/>
+        <link rel="shortcut icon" href="/favicon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
       </Head>
