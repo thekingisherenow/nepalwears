@@ -11,12 +11,12 @@ function MyApp({ Component, pageProps }) {
 
     try {
       if (localStorage.getItem("cart")) {
-        
         setCart(JSON.parse(localStorage.getItem("cart")));   
         saveCart(JSON.parse(localStorage.getItem("cart"))); 
       }
 
-    } catch (error) {
+    } 
+    catch (error) {
       console.error(error);
       localStorage.clear;
     }
