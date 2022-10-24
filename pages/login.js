@@ -5,9 +5,7 @@ const Login = () => {
   const checkboxRef = useRef(true);
   const [isChecked, setIsChecked] = useState(true)
 
-  // const handleChange = () => {
-  //   setIsChecked(checkboxRef.current.checked) 
-  // }
+  
   return (
     <div>
       <section className="h-screen">
