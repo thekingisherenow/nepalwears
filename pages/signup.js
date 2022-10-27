@@ -5,7 +5,7 @@ const Signup = () => {
 
   return (
     <div>
-    <section className="h-screen">
+    <section className="h-screen mb-[500px] md:mb-[400px] lg:mb-10 ">
       <div className="container px-6 py-12 h-full">
         <div className="flex justify-center items-center flex-wrap h-full mb-3 g-6 text-gray-800">
           <div className="md:w-8/12 md:max-auto lg:w-6/12 mb-12 md:mb-0">
@@ -15,11 +15,8 @@ const Signup = () => {
               alt="Phone image"
             />
           </div>
-          <div className="md:w-8/12 lg:w-5/12 lg:ml-20 ">
+          <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
             
-          {/* <div className="bg-gray-400er  flex flex-col">
-            <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2"> */}
-
                 <div className="bg-white px-6 py-4  text-black w-full">
                   <div className='mb-5   '>
                     <h1 className="text-4xl font-bold  mb-1">Sign Up.</h1>
@@ -77,8 +74,6 @@ const Signup = () => {
             </div>
         </div>
 
-          {/* </div>
-        </div> */}
       </div>
     </section>
     </div>

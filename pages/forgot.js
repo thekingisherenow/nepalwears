@@ -1,16 +1,17 @@
+import Link from 'next/link'
 import React from 'react'
 
 function Forgot() {
   return (
     <div>
-      <section className="h-screen mb-2">
+      <section className="h-screen mb-[500px] md:mb-[400px] lg:mb-10">
         <div className="container px-6 py-12 h-full">
           <div className="flex justify-center items-center flex-wrap h-full  g-6 text-gray-800">
             <div className="md:w-8/12 md:max-auto lg:w-6/12 mb-12 md:mb-0">
               <img
-                src="https://iili.io/DoM5w7.jpg"
+                src="https://iili.io/DIJJg2.jpg"
                 className="w-full"
-                alt="Phone image"
+                alt="confused people"
               />
             </div>
             <div className="md:w-8/12 lg:w-5/12 lg:ml-20 ">
@@ -23,13 +24,22 @@ function Forgot() {
                 </div>
                 <input
                   type="text"
-                  className="block border border-gray-400 w-full p-3 rounded mb-4"
+                  className="block border border-gray-200 w-full p-3 rounded mb-4"
                   name="email"
                   placeholder="Email" />
-                <button
+
+                  <div className='flex font-bold justify-end'>
+
+                <Link href={"/login"}><button
+                  className="w-1/4 rounded-xl text-center py-3  bg-gray-200  focus:outline-none 
+                  my-1 border-2 border-solid mr-4 cursor-pointer"
+                  >Cancel</button></Link>
+
+                  <button
                   type="submit"
-                  className="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-600 focus:outline-none my-1"
-                >Create Account</button>
+                  className="w-1/4 rounded-xl text-center py-3  bg-blue-500 text-white hover:bg-blue-600 focus:outline-none my-1"
+                  >Search</button>
+                  </div>
 
               </div>
 
