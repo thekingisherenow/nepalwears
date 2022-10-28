@@ -25,10 +25,7 @@ const handler = async (req, res) =>{
             }
 
         }
-        console.log(tshirts) 
     }
-
-
 
     res.status(200).json({tshirts })
 }

@@ -35,11 +35,14 @@ const Tshirts = ({products}) => {
           <div className='mt-1 color '>
             {products[item].color.includes('white') &&   <button className="border-2 ml-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
 }
-          {products[item].color.includes('pink') && <button className="border-2 ml-2  border-gray-300 rounded-full w-6 h-6 bg-pink-400 focus:outline-none"></button>}
-          {products[item].color.includes('green') && <button className="border-2 ml-2 border-gray-300 bg-green-600 rounded-full w-6 h-6 focus:outline-none"></button>}
+          {products[item].color.includes('pink') && <button className="border-2 ml-2  border-gray-300 rounded-full w-6 h-6
+           bg-pink-400 focus:outline-none"></button>}
           {products[item].color.includes('black') && <button className="border-2 ml-2 border-gray-300 rounded-full w-6 bg-black h-6 focus:outline-none"></button>}
+          {products[item].color.includes('green') && <button className="border-2 ml-2 border-gray-300 bg-green-600 rounded-full w-6 h-6 focus:outline-none"></button>}
+          
           {products[item].color.includes('blue') && <button className="border-2 ml-2 border-gray-300 rounded-full w-6 bg-blue-600 h-6 focus:outline-none"></button>}
           {products[item].color.includes('red') && <button className="border-2 ml-2 border-gray-300 rounded-full w-6 bg-red-600 h-6 focus:outline-none"></button>}
+          {products[item].color.includes('purple') && <button className="border-2 ml-2 border-gray-300 rounded-full w-6 bg-purple-600 h-6 focus:outline-none"></button>}
           
           </div>
         </div>
