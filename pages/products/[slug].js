@@ -8,6 +8,9 @@ const Slug = ({cart,addToCart,product,variants}) => {
   const { slug } = router.query
   console.log("colorSizeSlug",variants)
   console.log("object.keys",Object.keys(variants))
+  console.log(" Object.keys(variants['pink'])",Object.keys(variants['pink']))
+
+ 
 
   const [color, setColor] = useState(product.color);
   const [size, setSize] = useState(product.size);
@@ -67,24 +70,24 @@ const Slug = ({cart,addToCart,product,variants}) => {
         <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
           <div className="flex">
             <span className="mr-3">Color</span>
-            {Object.keys(variants).includes('white')&& Object.keys(variants['white']).includes(size) &&<button className="border-2 border-gray-300 rounded-full w-6 bg-white h-6 focus:outline-none"></button>}
-            {Object.keys(variants).includes('black')&& Object.keys(variants['black']).includes(size) &&<button className="border-2 border-gray-300 rounded-full w-6 bg-black h-6 focus:outline-none"></button>}
-            {Object.keys(variants).includes('pink')&& Object.keys(variants['pink']).includes(size) &&<button className="border-2 border-gray-300 ml-1 bg-pink-400 rounded-full w-6 h-6 focus:outline-none"></button>}
-            {Object.keys(variants).includes('blue')&& Object.keys(variants['blue']).includes(size) &&<button className="border-2 border-gray-300 ml-1 bg-blue-500 rounded-full w-6 h-6 focus:outline-none"></button>}
-            {Object.keys(variants).includes('green')&& Object.keys(variants['green']).includes(size) &&<button className="border-2 border-gray-300 ml-1 bg-green-500 rounded-full w-6 h-6 focus:outline-none"></button>}
-            {Object.keys(variants).includes('red')&& Object.keys(variants['red']).includes(size) &&<button className="border-2 border-gray-300 ml-1 bg-red-500 rounded-full w-6 h-6 focus:outline-none"></button>}
-            {Object.keys(variants).includes('purple')&& Object.keys(variants['white']).includes(size) &&<button className="border-2 border-gray-300 ml-1 bg-purple-500 rounded-full w-6 h-6 focus:outline-none"></button>}
+            {Object.keys(variants).includes('white') && Object.keys(variants['white']).includes(size) &&<button className={`border-2 border-gray-300 rounded-full w-6 bg-white h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('black') && Object.keys(variants['black']).includes(size) &&<button className={`border-2 border-gray-300 rounded-full w-6 bg-black h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('pink')&& Object.keys(variants['pink']).includes(size) &&<button className={`border-2 border-gray-300 ml-1 bg-pink-400 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('blue')&& Object.keys(variants['blue']).includes(size) &&<button className={`border-2 border-gray-300 ml-1 bg-blue-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('green') && Object.keys(variants['green']).includes(size) &&<button className={`border-2 border-gray-300 ml-1 bg-green-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('red') && Object.keys(variants['red']).includes(size) &&<button className={`border-2 border-gray-300 ml-1 bg-red-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('purple') && Object.keys(variants['purple']).includes(size) &&<button className={`border-2 border-gray-300 ml-1 bg-purple-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
           </div>
           <div className="flex ml-6 items-center">
             <span className="mr-3">Size</span>
             <div className="relative">
-              <select onChange={()=>{refreshVariant()}}
+              <select onChange={(e)=>{refreshVariant(e.target.value,color)}}
               className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-500 text-base pl-3 pr-10">
-                {Object.keys(variants[color]).includes("S") && <option >S</option> }
-                {Object.keys(variants[color]).includes("M") && <option >M</option> }
-                {Object.keys(variants[color]).includes("L") && <option >L</option> }
-                {Object.keys(variants[color]).includes("XL") && <option >XL</option> }
-                {Object.keys(variants[color]).includes("XXL") && <option >XXL</option> }
+                 <option >S</option> 
+                 <option >M</option> 
+                 <option >L</option> 
+                 <option >XL</option> 
+                 <option >XXL</option> 
                
 
               </select>
