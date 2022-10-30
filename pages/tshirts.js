@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import Product from "../models/Product"
 import mongoose from "mongoose"
+import Image from 'next/image'
 
 const Tshirts = ({products}) => {
 
@@ -25,10 +26,10 @@ const Tshirts = ({products}) => {
           <h2 className="text-gray-900 title-font text-lg font-medium">{products[item].title}</h2>
           <p className="mt-1">रु{products[item].price}</p>
           <div className="mt-1 size ">
-          {products[item].size.includes('S') && <span className='border p-1 mr-2 '>S</span>}
-          {products[item].size.includes('M') && <span className='border p-1 mr-2 '>M</span>}
-          {products[item].size.includes('L') && <span className='border p-1 mr-2 '>L</span>}
-          {products[item].size.includes('XL') && <span className='border p-1 mr-2 '>XL</span>}
+          {products[item].size.includes('S') && <span className='border p-1 mr-1 md:mr-2 '>S</span>}
+          {products[item].size.includes('M') && <span className='border p-1 mr-1 md:mr-2 '>M</span>}
+          {products[item].size.includes('L') && <span className='border p-1 mr-1 md:mr-2 '>L</span>}
+          {products[item].size.includes('XL') && <span className='border p-1 mr-1 md:mr-2 '>XL</span>}
           {products[item].size.includes('XXL') && <span className='border p-1  '>XXL</span>}
           </div>
 
