@@ -37,10 +37,10 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
       </div>
       <div className='mx-auto flex ml-6 sm:ml-auto '>
         <ul className='flex items-center space-x-2 sm:space-x-6 font-bold md:text-xl '>
-          <Link href={"/tshirts"}><a><li>T-Shirt</li></a></Link>
-          <Link href={"/hoodies"}><a><li>Hoodies</li></a></Link>
-          <Link href={"/mugs"}><a><li>Mugs</li></a></Link>
-          <Link href={"/stickers"}><a><li>Stickers</li></a></Link>
+          <Link href={"/tshirts"}><a><li className='hover:text-blue-800'>T-Shirt</li></a></Link>
+          <Link href={"/hoodies"}><a><li className='hover:text-blue-800'>Hoodies</li></a></Link>
+          <Link href={"/mugs"}><a><li className='hover:text-blue-800'>Mugs</li></a></Link>
+          <Link href={"/stickers"}><a><li className='hover:text-blue-800'>Stickers</li></a></Link>
         </ul>
       </div>
       <div
@@ -53,7 +53,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
       </div>
 
       <div ref={ref}
-        className='sideCart absolute top-0 right-0 bg-blue-200 py-10 px-8  transform transition-transform z-50  translate-x-full hidden h-[100vh] w-80
+        className='sideCart absolute top-0 right-0 bg-blue-200 py-10 px-8  transform transition-transform z-50 overflow-y-auto translate-x-full hidden h-[100vh] w-80
       '>
         <h2 className='font-bold text-xl text-center '>Shopping Cart</h2>
         <span onClick={toggleCart}

@@ -6,17 +6,12 @@ import Product from '../../models/Product'
 const Slug = ({ cart, addToCart, product, variants }) => {
   const router = useRouter()
   const { slug } = router.query
-  console.log("product:",product)
-  console.log("colorSizeSlug", variants)
-  console.log("object.keys", Object.keys(variants))
 
  
 
   const [color, setColor] = useState(product.color);
   const [size, setSize] = useState(product.size);
   let listofcolors = ["pink", "blue", "green", "red", "purple", "yellow", "black", "white"]
-  console.log("product",product)
-  console.log("variants",variants)
 
 
   const refreshVariant = (newColor, newSize) => {
@@ -76,8 +71,7 @@ const Slug = ({ cart, addToCart, product, variants }) => {
                 <div className="flex">
                   <span className="mr-3">Color</span>
                   {listofcolors.map((colorItem) => {
-                    console.log(color)
-                    return (<>
+                    return (<span key={colorItem}>
                       {Object.keys(variants).includes(colorItem)
                         // && Object.keys(variants[colorItem]).includes(size)
                         && 
@@ -88,7 +82,7 @@ const Slug = ({ cart, addToCart, product, variants }) => {
                           className={`border-2  ml-3 rounded-full w-6 ${colorItem} h-6 focus:outline-none
                        ${color === colorItem ? 'border-black' : 'border-gray-300'}`}>
                         </button>}
-                    </>
+                    </span >
                     )
                   })}
 
