@@ -15,7 +15,7 @@ const Tshirts = ({products}) => {
      {Object.keys(products).map((item)=>{
 
         return <Link key={products[item]._id} href={`/products/${products[item].slug}`}>
-        <div className="lg:w-1/5  md:w-1/4  sm:w-1/3 w-1/3 p-3 m-4 cursor-pointer   shadow-xl">
+        <div className="xl:w-1/5  lg:w-1/4  sm:w-1/3 w-1/3 p-3 m-4 cursor-pointer   shadow-xl">
 
         <a className="block relative rounded overflow-hidden">
           <img alt="ecommerce" className=' h-[30vh] mx-auto   md:h-[36vh] block'

@@ -5,3 +5,35 @@
 body {
   overflow-x: hidden;
 }
+
+ /* ["pink","blue","green","red","purple","yellow","black","white"]  */
+
+
+@layer components {
+  .blue {
+      @apply bg-blue-600
+  }
+  .pink{
+    @apply bg-pink-400
+  }
+.green{
+  @apply bg-green-600
+}
+.red{
+  @apply bg-red-600
+}
+
+.purple{
+  @apply bg-purple-600
+}
+
+.yellow{
+  @apply bg-yellow-600
+}
+  .white {
+    @apply bg-white
+}
+.black {
+  @apply bg-black
+}
+}

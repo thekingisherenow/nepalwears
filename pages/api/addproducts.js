@@ -5,6 +5,7 @@ import connectDb from "../../middleware/mongoose"
 const handler = async (req, res) =>{
 
     if (req.method === "POST"){
+        console.log("request.body.length",req.body.length)
       for (let i = 0; i < req.body.length; i++) {
         
         let p = new Product({
