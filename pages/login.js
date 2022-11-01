@@ -1,14 +1,85 @@
 import Link from 'next/link';
 import React, { useRef, useState } from 'react'
+import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {  useRouter } from 'next/router';
 
 const Login = () => {
   const checkboxRef = useRef(true);
   const [isChecked, setIsChecked] = useState(true)
+  const [showPassword, setShowPassword] = useState(false)
 
-  
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const router = useRouter();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      email: emailRef.current.value,
+      password: passwordRef.current.value
+    }
+    let res = await fetch('http://localhost:3000/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    let response = await res.json();
+
+    if (response.success) {
+      emailRef.current.value = ""
+      passwordRef.current.value = ""
+
+      toast.success('Succesfully logged in !', {
+        position: "bottom-left",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+
+
+      router.push("/");
+    }
+    else {
+      toast.error('Invalid Credentials!', {
+        position: "bottom-left",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+    }
+
+  }
+
   return (
     <div>
       <section className="h-screen">
+        <ToastContainer
+          position="bottom-left"
+          autoClose={2000}
+          limit={8}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <div className="container px-6 py-12 h-full">
           <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
             <div className="md:w-8/12 md:max-auto lg:w-6/12 mb-12 md:mb-0">
@@ -19,10 +90,10 @@ const Login = () => {
               />
             </div>
             <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
-              <form>
+              <form method='post' onSubmit={handleSubmit}  >
                 {/* <!-- Email input --> */}
                 <div className="mb-6">
-                  <input
+                  <input ref={emailRef}
                     type="text" id='email'
                     className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     placeholder="Email address"
@@ -30,17 +101,22 @@ const Login = () => {
                 </div>
 
                 {/* <!-- Password input --> */}
-                <div className="mb-6">
-                  <input
-                    type="password" name="password" id="password" placeholder="••••••••"
-                    className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-
-                  />
+                <div className="mb-6 relative ">
+                  <input ref={passwordRef}
+                    type={showPassword ? "text" : "password"} name="password" id="password" placeholder="••••••••"
+                    className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" />
+                  <p className='absolute cursor-pointer right-7 bottom-3   leading-3'>{showPassword ?
+                    <EyeSlashIcon
+                      onClick={() => setShowPassword(!showPassword)}
+                      className=' text-xl h-6 w-6' /> :
+                    <EyeIcon onClick={() => setShowPassword(!showPassword)}
+                      className=' text-xl h-6 w-6' />}
+                  </p>
                 </div>
 
-                <div 
-                 className="flex justify-between items-center mb-6">
-                  <div 
+                <div
+                  className="flex justify-between items-center mb-6">
+                  <div
                   >
                     <input
                       ref={checkboxRef}
@@ -57,11 +133,11 @@ const Login = () => {
                     >Remember me</label >
                   </div>
                   <Link href={"/forgot"}>
-                  <a
-                   
-                    className="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out"
+                    <a
+
+                      className="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out"
                     >Forgot password?</a >
-                    </Link>
+                  </Link>
                 </div>
 
                 {/* <!-- Submit button --> */}
@@ -74,13 +150,13 @@ const Login = () => {
                   Sign in
                 </button>
                 <p className="text-sm font-semibold mt-2 pt-1 mb-0 ">
-              Don&#39;t have an account?
-              <Link href={"/signup"}>
-              <a
-                className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out ml-2"
-                >Register</a >
-                </Link>
-            </p>
+                  Don&#39;t have an account?
+                  <Link href={"/signup"}>
+                    <a
+                      className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out ml-2"
+                    >Register</a >
+                  </Link>
+                </p>
 
               </form>
             </div>
@@ -88,7 +164,7 @@ const Login = () => {
         </div>
       </section>
     </div>
-        )
-        }
+  )
+}
 
 export default Login

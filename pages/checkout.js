@@ -80,11 +80,11 @@ const Checkout = ({ cart, toggleCart, clearCart, removeFromCart, subTotal, addTo
             
             {Object.keys(cart).map((k)=>{
             return(
-              <>
-              <li key={k}
+              <div key={k}>
+              <li 
                className='item flex bg-blue-200 '>
-            <div className=' font-semibold my-5 '>{cart[k].name} </div>
-            <div className='mx-5 my-5'>{cart[k].price} </div>
+            <div className=' font-semibold my-5 '>{cart[k].name}({cart[k].size}/{cart[k].variant}) </div>
+            <div className='mx-5 my-5'>रू{cart[k].price} </div>
 
             
             <div className='flex items-center font-semibold justify-center '>
@@ -100,7 +100,7 @@ const Checkout = ({ cart, toggleCart, clearCart, removeFromCart, subTotal, addTo
               
           </li>
          
-              </>
+              </div>
               
 
               )

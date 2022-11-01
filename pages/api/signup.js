@@ -1,17 +1,17 @@
-import Product from "../../models/Product"
+import User from "../../models/User"
 import connectDb from "../../middleware/mongoose"
+var CryptoJS = require("crypto-js");
 
 
 const handler = async (req, res) =>{
 
     if (req.method === "POST"){
-      for (let i = 0; i < req.body.length; i++) {
-        
-        let p = await Product.findByIdAndUpdate(req.body[i]._id,req.body[i])
-        console.log(p)
 
+        const {name,email} = req.body
+        const user = new User({name,email,password:CryptoJS.AES.encrypt(req.body.password, 'secret123').toString()})
+        await user.save();
         
-    } 
+
     res.status(200).json({ success : 'success' })
     }
     else {

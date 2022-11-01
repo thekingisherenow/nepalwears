@@ -22,7 +22,7 @@ const handler = async (req, res) =>{
         await p.save();
         
     } 
-    res.status(200).json({ message : 'happy tihar !' })
+    res.status(200).json({ success : 'success' })
     }
     else {
         res.status(400).json({ error : 'Wrong method !' })

@@ -1,3 +1,4 @@
+import { Router, useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
@@ -6,7 +7,8 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps }) {
   const [cart, setCart] = useState({})
   const [subTotal, setSubTotal] = useState(0)
-
+  const router = useRouter()
+ 
   useEffect(() => {
 
     try {
@@ -23,7 +25,10 @@ function MyApp({ Component, pageProps }) {
   }, [])
 
   const saveCart = (myCart) => {
-    localStorage.setItem("cart",JSON.stringify(myCart))
+    if (typeof window !== 'undefined') {
+      // Perform localStorage action
+      localStorage.setItem("cart",JSON.stringify(myCart))    }
+   
     let subt = 0;
     
     let keys = Object.keys(myCart)
@@ -31,9 +36,18 @@ function MyApp({ Component, pageProps }) {
     for (let index = 0; index < keys.length; index++) {
       subt += myCart[keys[index]].qty * myCart[keys[index]].price
     }
-    setSubTotal(subt)
+    setSubTotal(subt);
   }
+  const buyNow = (itemCode, qty, price, name, size, variant) => {
+    saveCart({});
+    let newCart = {itemCode:{qty:1,price,name,size,variant}}
 
+    setCart(newCart);
+    saveCart(newCart);
+    console.log(newCart);
+    router.push("/checkout")
+
+  }
   const addToCart = (itemCode, qty, price, name, size, variant) => {
     let newCart = cart;
 
@@ -69,7 +83,7 @@ function MyApp({ Component, pageProps }) {
   return <>
     <Navbar cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}
       clearCart={clearCart} subTotal={subTotal} />
-    <Component cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}
+    <Component buyNow = {buyNow} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}
       clearCart={clearCart} subTotal={subTotal}   {...pageProps} />
     <Footer />
   </>

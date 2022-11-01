@@ -19,14 +19,13 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
       ref.current.classList.add("translate-x-full");
       ref.current.classList.add("hidden");
 
-
     }
   }
 
   const ref = useRef();
-
+ 
   return (
-    <div className='flex justify-start mt-2 sticky top-0 bg-white  z-50 shadow-xl '>
+    <div className='flex justify-start mt-2 sticky top-0 bg-white z-50 shadow-xl '>
       <div>
         <Link href={"/"}>
           <a>
@@ -48,14 +47,15 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
         <Link href={"/login"}><a>
           <UserCircleIcon className='relative w-10 cursor-pointer  text-4xl mx-2  '/></a></Link>
         <ShoppingCartIcon onClick={toggleCart}
-          className='relative w-10  text-4xl mr-1 ' />
-        <span className='absolute -top-1 -right-1 bg-orange-400 rounded-full p-1 h-7 w-7 cursor-pointer text-center  '>{Object.keys(cart).length}</span>
+          className='relative w-10  text-4xl mr-3 ' />
+        <span className='absolute -top-1 right-1 bg-orange-400 rounded-full p-1 h-7 w-7 cursor-pointer text-center'>
+          {Object.keys(cart).length}</span>
       </div>
 
       <div ref={ref}
-        className='sideCart absolute top-0 right-0 bg-blue-200 py-10 px-8  transform transition-transform z-50 overflow-y-auto translate-x-full hidden h-[100vh] w-80
+        className='sideCart absolute top-0 right-0 bg-blue-200 py-10 px-8  transform transition-transform z-50 overflow-y-auto translate-x-full hidden h-[100vh] w-96
       '>
-        <h2 className='font-bold text-xl text-center '>Shopping Cart</h2>
+        <h2 className='font-bold text-xl text-center '> Shopping Cart</h2>
         <span onClick={toggleCart}
           className='absolute top-3 right-2 cursor-pointer text-blue-600'><XCircleIcon className='h-6 w-6' /></span>
         <ol className='list-decimal font-semibold'>
@@ -69,11 +69,9 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
                 return (
                   <li key={k}
                     className='item flex '>
-                    <div className='w-2/3 font-semibold my-5 mr-3'>{cart[k].name} </div>
-                    <div className='mx-5 my-5'>{cart[k].price} </div>
-
-
-                    <div className='flex items-center font-semibold justify-center w-1/3'>
+                    <div className='w-4/5 font-semibold my-5 p-1 '>{cart[k].name}({cart[k].size}/{cart[k].variant}) </div>
+                    <div className='mx-2 my-3 flex justify-center items-center'>रू{cart[k].price} </div>
+                    <div className='flex items-center font-semibold justify-center w-1/5 -mr-5'>
                       <MinusCircleIcon
                         onClick={() => { removeFromCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant) }}
                         className='h-5 mr-2 cursor-pointer text-blue-600' />
@@ -97,7 +95,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
           <Link href={"/checkout"}><a>
             <button
               onClick={toggleCart}
-              className="flex text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">
+              className="flex text-white bg-blue-500 border-0 py-2 px-5 focus:outline-none hover:bg-blue-600 rounded text-lg">
               <ShoppingBagIcon
 
                 className='h-6 mt-' />Checkout</button></a></Link>
