@@ -8,7 +8,8 @@ function MyApp({ Component, pageProps }) {
   const [cart, setCart] = useState({})
   const [subTotal, setSubTotal] = useState(0)
   const router = useRouter()
- 
+  const [user, setUser] = useState({value:null})
+  const [key, setKey] = useState(0)
   useEffect(() => {
 
     try {
@@ -22,7 +23,19 @@ function MyApp({ Component, pageProps }) {
       console.error(error);
       localStorage.clear;
     }
-  }, [])
+
+    let token = localStorage.getItem("token")
+    console.log("token ko value",token)
+    if (token) {
+      setUser({value : token});
+      console.log("if (token) bhitra ")
+      setKey(Math.random())
+    }
+    else {
+      setUser({value:null})
+      console.log("else bhita chu")
+    }
+  }, [router.query])
 
   const saveCart = (myCart) => {
     if (typeof window !== 'undefined') {
@@ -81,7 +94,7 @@ function MyApp({ Component, pageProps }) {
     saveCart("cart", {});
   }
   return <>
-    <Navbar cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}
+    <Navbar key = {key} user = {user} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}
       clearCart={clearCart} subTotal={subTotal} />
     <Component buyNow = {buyNow} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}
       clearCart={clearCart} subTotal={subTotal}   {...pageProps} />
