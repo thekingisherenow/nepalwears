@@ -1,7 +1,17 @@
 import Link from 'next/link'
-import React from 'react'
+import { useRouter } from 'next/router';
+import React, { useEffect } from 'react'
+
 
 function Forgot() {
+const router = useRouter();
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      router.push("/")
+    }
+  }, [])
+
   return (
     <div>
       <section className="h-screen mb-[500px] md:mb-[400px] lg:mb-10">

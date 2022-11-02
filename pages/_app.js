@@ -2,7 +2,8 @@ import { Router, useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-import '../styles/globals.css'
+import '../styles/globals.css';
+import LoadingBar from 'react-top-loading-bar'
 
 function MyApp({ Component, pageProps }) {
   const [cart, setCart] = useState({})
@@ -10,7 +11,17 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter()
   const [user, setUser] = useState({value:null})
   const [key, setKey] = useState(0)
+
+  const [progress, setProgress] = useState(0)
+
+  
   useEffect(() => {
+    router.events.on('routeChangeComplete', ()=>{
+      setProgress(100) 
+    })
+    router.events.on('routeChangeStart', ()=>{
+      setProgress(40) 
+    })
 
     try {
       if (localStorage.getItem("cart")) {
@@ -36,6 +47,13 @@ function MyApp({ Component, pageProps }) {
       console.log("else bhita chu")
     }
   }, [router.query])
+
+  const logout = () => {
+    localStorage.removeItem("token")
+    setUser({value:null})
+    setKey(Math.random())
+    router.push("/")
+  }
 
   const saveCart = (myCart) => {
     if (typeof window !== 'undefined') {
@@ -94,7 +112,16 @@ function MyApp({ Component, pageProps }) {
     saveCart("cart", {});
   }
   return <>
-    <Navbar key = {key} user = {user} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}
+
+   <LoadingBar
+        color='	#FFA500'
+        progress={progress}
+        waitingTime={500}
+        onLoaderFinished={() => setProgress(0)}
+      /> 
+      
+
+    <Navbar logout = {logout} key = {key} user = {user} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}
       clearCart={clearCart} subTotal={subTotal} />
     <Component buyNow = {buyNow} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}
       clearCart={clearCart} subTotal={subTotal}   {...pageProps} />

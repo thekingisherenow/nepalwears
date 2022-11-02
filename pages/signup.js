@@ -1,18 +1,28 @@
 import Link from 'next/link';
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from 'next/router';
 
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword2, setShowPassword2] = useState(false);
+  const [signupcomplete, setSignupcomplete] = useState(false);
+  
+  const router = useRouter();
 
   const nameRef = useRef();
   const emailRef = useRef();
   const pass1Ref = useRef();
   const pass2Ref = useRef();
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      router.push("/")
+    }
+  }, [])
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,16 +48,7 @@ const Signup = () => {
     pass1Ref.current.value = "";
     pass2Ref.current.value = "";
 
-    toast.success('Your account has been created !', {
-      position: "bottom-left",
-      autoClose: 2000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      });
+    setSignupcomplete(true);
 
   }
 
@@ -143,9 +144,11 @@ const Signup = () => {
                     </a>
                   </div>
                   <button
+                  disabled={signupcomplete}
                     type="submit"
                     className="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-600 focus:outline-none my-1"
                   >Create Account</button>
+                  {signupcomplete && <p className='text-green-700  '>Your account has been created !</p>}
                 </form>
 
 

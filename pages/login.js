@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -15,6 +15,12 @@ const Login = () => {
   const passwordRef = useRef();
   const router = useRouter();
 
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      router.push("/")
+    }
+  }, [])
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -48,8 +54,10 @@ const Login = () => {
         theme: "light",
         });
 
-
-      router.push("/");
+        setTimeout(() => {
+          router.push("/");
+        }, 1500)
+      
     }
     else {
       toast.error('Invalid Credentials!', {
