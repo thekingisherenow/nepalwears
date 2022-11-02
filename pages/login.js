@@ -28,7 +28,7 @@ const Login = () => {
       email: emailRef.current.value,
       password: passwordRef.current.value
     }
-    let res = await fetch('http://localhost:3000/api/login', {
+    let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/login, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

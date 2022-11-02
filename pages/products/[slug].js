@@ -16,7 +16,7 @@ const Slug = ({ cart, buyNow, addToCart, product, variants }) => {
 
 
   const refreshVariant = (newColor, newSize) => {
-    let url = `${process.env}/products/${variants[newColor][newSize]['slug']}`
+    let url = `${process.env.NEXT_PUBLIC_HOST}/products/${variants[newColor][newSize]['slug']}`
     window.location = url;
   }
 
