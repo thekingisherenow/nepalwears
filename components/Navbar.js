@@ -31,14 +31,14 @@ const Navbar = ({ logout, user, cart, addToCart, removeFromCart, clearCart, subT
 
   return (
     <div className='flex flex-col md:flex-row justify-center items-center md:justify-start  sticky top-0 bg-white z-50 p-3 shadow-xl '>
-      <div className='mt-7'>
         <Link href={"/"}>
           <a>
-            <Image src='https://iili.io/mIDOMJ.png' className='object-cover ' width={200} height ={60 } 
+            <Image src='https://iili.io/mR3I6B.png' className='object-cover'  
+            height={50} width={230}
+
               alt='' />
           </a>
         </Link>
-      </div>
       <div className='mx-auto flex   '>
         <ul className='flex items-center justify-center  space-x-6 font-bold  '>
           <Link href={"/tshirts"}><a><li className='hover:text-blue-800 text-xl'>T-Shirt</li></a></Link>
