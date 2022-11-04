@@ -11,8 +11,8 @@ const Login = () => {
   const [isChecked, setIsChecked] = useState(true)
   const [showPassword, setShowPassword] = useState(false)
 
-  const emailRef = useRef();
-  const passwordRef = useRef();
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
   const router = useRouter();
 
   useEffect(() => {

@@ -13,10 +13,10 @@ const Signup = () => {
   
   const router = useRouter();
 
-  const nameRef = useRef();
-  const emailRef = useRef();
-  const pass1Ref = useRef();
-  const pass2Ref = useRef();
+  const nameRef = useRef("");
+  const emailRef = useRef("");
+  const pass1Ref = useRef("");
+  const pass2Ref = useRef("");
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
