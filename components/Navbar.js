@@ -30,7 +30,7 @@ const Navbar = ({ logout, user, cart, addToCart, removeFromCart, clearCart, subT
 
 
   return (
-    <div className='flex flex-col md:flex-row justify-center items-center md:justify-start  sticky top-0 bg-white z-50 p-3 shadow-xl '>
+    <div className='flex flex-col md:flex-row items-start xs:items-center sticky top-0 bg-white z-50 p-3 shadow-xl '>
         <Link href={"/"}>
           <a>
             <Image src='https://iili.io/mR3I6B.png' className='object-cover'  
@@ -39,8 +39,8 @@ const Navbar = ({ logout, user, cart, addToCart, removeFromCart, clearCart, subT
               alt='' />
           </a>
         </Link>
-      <div className='mx-auto flex   '>
-        <ul className='flex items-center justify-center  space-x-6 font-bold  '>
+      <div className='mx-auto md:ml-10 md:my-auto '>
+        <ul className='flex items-center space-x-6 font-bold  '>
           <Link href={"/tshirts"}><a><li className='hover:text-blue-800 text-xl'>T-Shirt</li></a></Link>
           <Link href={"/hoodies"}><a><li className='hover:text-blue-800 text-xl'>Hoodies</li></a></Link>
           <Link href={"/mugs"}><a><li className='hover:text-blue-800 text-xl'>Mugs</li></a></Link>
@@ -48,7 +48,7 @@ const Navbar = ({ logout, user, cart, addToCart, removeFromCart, clearCart, subT
         </ul>
       </div>
 
-      <div className='absolute flex top-7 right-5'>
+      <div className='absolute flex top-4 right-5'>
 
         <div>
 
