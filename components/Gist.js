@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Gist = () => {
@@ -65,7 +66,9 @@ Your privacy is the highest priority of our dedicated team. And if you ever need
       </div>
      
     </div>
-    <button className="flex mx-auto mt-16 text-white bg-orange-500 border-0 py-2 px-8 focus:outline-none hover:bg-orange-600 rounded text-lg">Button</button>
+    <h1 className='text-center font-bold pt-4 mt-12 '>Check out T-shirt Designs.</h1>
+    <Link href={"/tshirts"}><button className="flex mx-auto mt-2 text-white bg-orange-500 border-0
+     py-2 px-8 focus:outline-none hover:bg-orange-600 rounded text-lg">Let's go </button></Link>
   </div>
 </section>
       </div>
