@@ -113,7 +113,7 @@ const Login = () => {
                 {/* <!-- Password input --> */}
                 <div className="mb-6 relative ">
                   <input ref={passwordRef}
-                    type={showPassword ? "text" : "password"} name="password" id="password" placeholder="••••••••"
+                    type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Password"
                     className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" />
                   <p className='absolute cursor-pointer right-7 bottom-3   leading-3'>{showPassword ?
                     <EyeSlashIcon
@@ -142,11 +142,11 @@ const Login = () => {
                       htmlFor="checkbox"
                     >Remember me</label >
                   </div>
-                  <Link href={"/forgot"}>
-                    <a
+                  <Link href={"/forgot"}
+                    
 
                       className="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out"
-                    >Forgot password?</a >
+                    >Forgot password?
                   </Link>
                 </div>
 
@@ -161,10 +161,10 @@ const Login = () => {
                 </button>
                 <p className="text-sm font-semibold mt-2 pt-1 mb-0 ">
                   Don&#39;t have an account?
-                  <Link href={"/signup"}>
-                    <a
+                  <Link href={"/signup"}
+                   
                       className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out ml-2"
-                    >Register</a >
+                    >Register
                   </Link>
                 </p>
 

@@ -7,6 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const Slug = ({ cart, buyNow, addToCart, product, variants }) => {
+  console.log("variants",variants)
+
   const router = useRouter();
   const { slug } = router.query
 
@@ -16,7 +18,9 @@ const Slug = ({ cart, buyNow, addToCart, product, variants }) => {
 
 
   const refreshVariant = (newColor, newSize) => {
+    console.log("newcolor,newsize",newColor,newSize)
     let url = `${process.env.NEXT_PUBLIC_HOST}/products/${variants[newColor][newSize]['slug']}`
+    // let url = `${process.env.NEXT_PUBLIC_HOST}/login`
     window.location = url;
   }
 

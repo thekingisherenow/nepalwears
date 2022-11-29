@@ -31,20 +31,20 @@ function MyApp({ Component, pageProps }) {
 
     } 
     catch (error) {
-      console.error(error);
+      // console.error(error);
       localStorage.clear;
     }
 
     let token = localStorage.getItem("token")
-    console.log("token ko value",token)
+    // console.log("token ko value",token)
     if (token) {
       setUser({value : token});
-      console.log("if (token) bhitra ")
+      // console.log("if (token) bhitra ")
       setKey(Math.random())
     }
     else {
       setUser({value:null})
-      console.log("else bhita chu")
+      // console.log("else bhita chu")
     }
   }, [router.query])
 
@@ -75,7 +75,7 @@ function MyApp({ Component, pageProps }) {
 
     setCart(newCart);
     saveCart(newCart);
-    console.log(newCart);
+    // console.log(newCart);
     router.push("/checkout")
 
   }

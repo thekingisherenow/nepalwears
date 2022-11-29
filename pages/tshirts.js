@@ -2,7 +2,6 @@ import Link from 'next/link'
 import React from 'react'
 import Product from "../models/Product"
 import mongoose from "mongoose"
-import Image from 'next/image'
 
 const Tshirts = ({products}) => {
 
@@ -11,15 +10,15 @@ const Tshirts = ({products}) => {
       <section className="text-gray-600 body-font">
   <div className="container px-5 py-24 mx-auto">
 
-    <div className="flex flex-wrap -mx-24 sm:-m-6 justify-center">
+    <div className="flex flex-wrap sm:-m-6 justify-center">
       
      {Object.keys(products).map((item)=>{
 
         return <Link passHref= {true} key={products[item]._id} href={`/products/${products[item].slug}`}>
-        <div className="xl:w-1/5  lg:w-1/4  sm:w-1/3 w-1/3 p-3 m-1 sm:m-4 cursor-pointer   shadow-xl">
+        <div className="xl:w-1/5  lg:w-1/4  sm:w-1/2 w-1/2 p-1 mb-4  cursor-pointer   shadow-xl">
 
         <a className="block relative rounded overflow-hidden">
-          <img alt="ecommerce" className=' h-[40vh] mx-auto   md:h-[36vh] block'
+          <img alt="ecommerce" className=' h-[40vh] mx-auto   md:h-[36vh] block image-contain'
            src={products[item].img}/> </a>
         <div className="mt-4">
           <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">{products[item].category}</h3>

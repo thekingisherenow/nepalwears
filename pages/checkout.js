@@ -108,12 +108,12 @@ const Checkout = ({ cart, toggleCart, clearCart, removeFromCart, subTotal, addTo
            <span className='font-bold '>Subtotal: रू {subTotal}</span>
           <div className='my-4'>
 
-          <Link href={"/checkout"}><a>  
+          <Link href={"/checkout"}>
         <button 
           className="flex text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">
           <ShoppingBagIcon 
         
-        className='h-6 mt-'/>Pay रू {subTotal}</button></a></Link>
+        className='h-6 mt-'/>Pay रू {subTotal}</button></Link>
         </div>
             
             </>

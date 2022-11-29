@@ -11,7 +11,7 @@ const Stickers = ({products}) => {
       <section className="text-gray-600 body-font">
   <div className="container px-5 py-24 mx-auto">
 
-    <div className="flex flex-wrap -mx-24 sm:-m-6 justify-center">
+    <div className="flex flex-wrap  sm:-m-6 justify-center">
       {Object.keys(products).length ===0 && <p className='text-sm text-gray-600'>Sorry,all the stickers are out of stock.New stock coming soon. Stay tuned.</p>}
      {Object.keys(products).map((item)=>{
 
