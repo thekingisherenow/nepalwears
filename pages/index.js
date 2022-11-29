@@ -25,7 +25,7 @@ export default function Home() {
     {/* <Player>
       <source src="https://www.pexels.com/video/a-young-man-breaking-into-a-laugh-4832216/" />
     </Player> */}
-      <Gist/>
+      {/* <Gist/> */}
   
 
     </div>
