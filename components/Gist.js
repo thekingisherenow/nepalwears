@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import { TruckIcon } from '@heroicons/react/24/solid'
 
 const Gist = () => {
   return (
@@ -28,11 +29,14 @@ Your privacy is the highest priority of our dedicated team. And if you ever need
       <div className=" md:w-1/2 p-4">
         <div className="border border-gray-200 p-6 rounded-lg">
           <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-orange-100 text-orange-500 mb-4">
-            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-6 h-6" viewBox="0 0 24 24">
+            {/* <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-6 h-6" viewBox="0 0 24 24">
               <circle cx="6" cy="6" r="3"></circle>
               <circle cx="6" cy="18" r="3"></circle>
               <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-            </svg>
+            </svg> */}
+            <TruckIcon  className='w-5 h-5'/>
+
+
           </div>
           <h2 className="text-lg text-gray-900 font-medium title-font mb-2">Easy Shipping</h2>
           <p className="leading-relaxed text-base">We now deliver to 10 major cities in Nepal. The delivery charges vary.</p>
