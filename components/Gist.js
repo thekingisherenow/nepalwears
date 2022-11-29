@@ -19,8 +19,9 @@ const Gist = () => {
               <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
             </svg>
           </div>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
+          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">Peace of mind</h2>
+          <p className="leading-relaxed text-base">
+Your privacy is the highest priority of our dedicated team. And if you ever need assistance, we are always ready to step in for support.</p>
         </div>
       </div>
       <div className="xl:w-1/3 md:w-1/2 p-4">
@@ -32,8 +33,8 @@ const Gist = () => {
               <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
             </svg>
           </div>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">The Catalyzer</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
+          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">Easy Shipping</h2>
+          <p className="leading-relaxed text-base">We now deliver to 20 cities in Nepal.</p>
         </div>
       </div>
       <div className="xl:w-1/3 md:w-1/2 p-4">
@@ -44,8 +45,8 @@ const Gist = () => {
               <circle cx="12" cy="7" r="4"></circle>
             </svg>
           </div>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">Neptune</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
+          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">Unique Items</h2>
+          <p className="leading-relaxed text-base">We have items with unique designs of your favourite band,superheros,anime characters,which you will find no where else.</p>
         </div>
       </div>
       <div className="xl:w-1/3 md:w-1/2 p-4">
@@ -55,8 +56,8 @@ const Gist = () => {
               <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"></path>
             </svg>
           </div>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">Melanchole</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
+          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">Personalized Designs</h2>
+          <p className="leading-relaxed text-base">You can contact us for making designs you wish.</p>
         </div>
       </div>
       <div className="xl:w-1/3 md:w-1/2 p-4">
