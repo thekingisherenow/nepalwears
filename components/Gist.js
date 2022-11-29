@@ -13,7 +13,7 @@ const Gist = () => {
      Varities of designs in hoodies,t-shirts,mugs.</p>
     </div>
     <div className="flex flex-wrap -m-4">
-      <div className="xl:w-1/3 md:w-1/2 p-4">
+      <div className=" md:w-1/2 p-4">
         <div className="border border-gray-200 p-6 rounded-lg">
           <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-orange-100 text-orange-500 mb-4">
             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-6 h-6" viewBox="0 0 24 24">
@@ -25,7 +25,7 @@ const Gist = () => {
 Your privacy is the highest priority of our dedicated team. And if you ever need assistance, we are always ready to step in for support.</p>
         </div>
       </div>
-      <div className="xl:w-1/3 md:w-1/2 p-4">
+      <div className=" md:w-1/2 p-4">
         <div className="border border-gray-200 p-6 rounded-lg">
           <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-orange-100 text-orange-500 mb-4">
             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-6 h-6" viewBox="0 0 24 24">
@@ -35,10 +35,10 @@ Your privacy is the highest priority of our dedicated team. And if you ever need
             </svg>
           </div>
           <h2 className="text-lg text-gray-900 font-medium title-font mb-2">Easy Shipping</h2>
-          <p className="leading-relaxed text-base">We now deliver to 20 cities in Nepal.</p>
+          <p className="leading-relaxed text-base">We now deliver to 10 major cities in Nepal. The delivery charges vary.</p>
         </div>
       </div>
-      <div className="xl:w-1/3 md:w-1/2 p-4">
+      <div className=" md:w-1/2 p-4">
         <div className="border border-gray-200 p-6 rounded-lg">
           <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-orange-100 text-orange-500 mb-4">
             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-6 h-6" viewBox="0 0 24 24">
@@ -52,7 +52,7 @@ Your privacy is the highest priority of our dedicated team. And if you ever need
             </p>
         </div>
       </div>
-      <div className="xl:w-1/3 md:w-1/2 p-4">
+      <div className=" md:w-1/2 p-4">
         <div className="border border-gray-200 p-6 rounded-lg">
           <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-orange-100 text-orange-500 mb-4">
             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-6 h-6" viewBox="0 0 24 24">
