@@ -45,8 +45,10 @@ Your privacy is the highest priority of our dedicated team. And if you ever need
               <circle cx="12" cy="7" r="4"></circle>
             </svg>
           </div>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">Unique Items</h2>
-          <p className="leading-relaxed text-base">We have items with unique designs of your favourite band,superheros,anime characters,which you will find no where else.</p>
+          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">Personalized Designs
+           </h2>
+          <p className="leading-relaxed text-base">You can contact us for making designs you wish.                                                         .
+            </p>
         </div>
       </div>
       <div className="xl:w-1/3 md:w-1/2 p-4">
@@ -56,32 +58,12 @@ Your privacy is the highest priority of our dedicated team. And if you ever need
               <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"></path>
             </svg>
           </div>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">Personalized Designs</h2>
-          <p className="leading-relaxed text-base">You can contact us for making designs you wish.</p>
+          <h2 className="text-lg text-gray-900 font-medium title-font mb-2"> Unique Items</h2>
+          <p className="leading-relaxed text-base">We have items with unique designs of your favourite band,superheros,anime characters,which you will find no where else.
+            </p>
         </div>
       </div>
-      <div className="xl:w-1/3 md:w-1/2 p-4">
-        <div className="border border-gray-200 p-6 rounded-lg">
-          <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-orange-100 text-orange-500 mb-4">
-            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-6 h-6" viewBox="0 0 24 24">
-              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-            </svg>
-          </div>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">Bunker</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
-        </div>
-      </div>
-      <div className="xl:w-1/3 md:w-1/2 p-4">
-        <div className="border border-gray-200 p-6 rounded-lg">
-          <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-orange-100 text-orange-500 mb-4">
-            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-6 h-6" viewBox="0 0 24 24">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-          </div>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">Ramona Falls</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
-        </div>
-      </div>
+     
     </div>
     <button className="flex mx-auto mt-16 text-white bg-orange-500 border-0 py-2 px-8 focus:outline-none hover:bg-orange-600 rounded text-lg">Button</button>
   </div>
